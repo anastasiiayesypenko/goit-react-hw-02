@@ -4,18 +4,30 @@ import MovieGrid from './MovieGrid/MovieGrid';
 import SearchBar from './SearchBar/SearchBar';
 import items from './movies.json';
 
+const filterMovies = (movies, query) => {
+  return movies.filter(movie =>
+    movie.title.toLowerCase().includes(query.toLowerCase()),
+  );
+};
 class MoviesPage extends Component {
-  state = {};
+  state = {
+    value: '',
+    movies: items,
+  };
 
-  handleInputChange = () => {
-    console.log('dvfbgnj');
+  handleInputChange = inputValue => {
+    this.setState({
+      value: inputValue,
+    });
   };
 
   render() {
+    const { value, movies } = this.state;
+    const filtered = filterMovies(movies, value);
     return (
       <div className={styles.container}>
-        <SearchBar value="" onChange={this.handleInputChange} />{' '}
-        <MovieGrid items={items} />{' '}
+        <SearchBar value={value} onChange={this.handleInputChange} />{' '}
+        <MovieGrid items={filtered} />{' '}
       </div>
     );
   }

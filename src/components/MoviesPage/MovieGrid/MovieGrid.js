@@ -3,18 +3,22 @@ import PropTypes from 'prop-types';
 import styles from './MovieGrid.module.css';
 import MovieGridItem from './MovieGridItem/MovieGridItem';
 
-const MovieGrid = ({ items }) => (
-  <div className={styles.movieGrid}>
-    {' '}
-    {items.map()}{' '}
-    <MovieGridItem
-      id={items.id}
-      title={items.title}
-      poster={items.posterUrl}
-      overview={items.overview}
-    />{' '}
-  </div>
-);
+const MovieGrid = ({ items }) =>
+  items.length > 0 ? (
+    <div className={styles.movieGrid}>
+      {' '}
+      {items.map(item => (
+        <MovieGridItem
+          key={item.id}
+          title={item.title}
+          poster={item.posterUrl}
+          overview={item.overview}
+        />
+      ))}{' '}
+    </div>
+  ) : (
+    <div className={styles.noResults}> No matching results! </div>
+  );
 MovieGrid.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
