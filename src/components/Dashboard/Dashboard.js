@@ -1,37 +1,52 @@
 import React, { Component } from 'react';
+import v4 from 'uuid';
+import TransactionHistory from './TransactionHistory/TransactionHistory';
+import Balance from './Balance/Balance';
+import Controls from './Controls/Controls';
+import styles from './Dashboard.module.css';
+
+const date = new Date();
 
 class Dashboard extends Component {
-  state = {};
+  state = {
+    balance: 5000,
+    history: [
+      {
+        id: v4(),
+        type: 'deposit',
+        amount: 5000,
+        date: date.toLocaleString(),
+      },
+    ],
+  };
+
+  addDepositTransaction = item => {
+    const { history, balance } = this.state;
+    this.setState({
+      balance: balance + item.amount,
+      history: [...history, item],
+    });
+  };
+
+  addWithdrawalTransaction = item => {
+    const { history, balance } = this.state;
+    this.setState({
+      balance: balance - item.amount,
+      history: [...history, item],
+    });
+  };
 
   render() {
+    const { balance, history } = this.state;
     return (
-      <div className="dashboard">
-        <section className="controls">
-          <input type="number" />
-          <button type="button"> Deposit </button>{' '}
-          <button type="button"> Withdraw </button>{' '}
-        </section>{' '}
-        <section className="balance">
-          <span> ⬆2000 $ </span> <span> ⬇1000 $ </span>{' '}
-          <span> Balance: 5000 $ </span>{' '}
-        </section>{' '}
-        <table className="history">
-          <thead>
-            <tr>
-              <th> Transaction </th> <th> Amount </th> <th> Date </th>{' '}
-            </tr>{' '}
-          </thead>{' '}
-          <tbody>
-            <tr>
-              <td> Deposit </td> <td> 200 $ </td>{' '}
-              <td> 4 / 17 / 2019, 12: 45: 17 </td>{' '}
-            </tr>{' '}
-            <tr>
-              <td> Withdrawal </td> <td> 100 $ </td>{' '}
-              <td> 4 / 18 / 2019, 14: 15: 23 </td>{' '}
-            </tr>{' '}
-          </tbody>{' '}
-        </table>{' '}
+      <div className={styles.dashboard}>
+        <Controls
+          balance={balance}
+          onDepositClick={this.addDepositTransaction}
+          onWithdrawalClick={this.addWithdrawalTransaction}
+        />{' '}
+        <Balance balance={balance} history={history} />{' '}
+        <TransactionHistory history={history} />{' '}
       </div>
     );
   }
