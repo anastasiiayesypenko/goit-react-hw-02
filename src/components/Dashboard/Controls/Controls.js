@@ -13,7 +13,7 @@ class Controls extends Component {
   handleDepositClick = () => {
     const date = new Date();
     const input = document.getElementById('input');
-    if (Number(input.value) === 0) {
+    if (Number(input.value) <= 0) {
       // eslint-disable-next-line no-alert
       alert('Введите корректную сумму для проведения операции!');
     } else {
@@ -34,9 +34,9 @@ class Controls extends Component {
     if (Number(input.value) > this.props.balance) {
       // eslint-disable-next-line no-alert
       alert('На счету недостаточно средств для проведения операции!');
-    } else if (Number(input.value) === 0) {
+    } else if (Number(input.value) <= 0) {
       // eslint-disable-next-line no-alert
-      alert('Введите сумму для проведения операции!');
+      alert('Введите корректную сумму для проведения операции!');
     } else {
       const newTransaction = {
         id: v4(),

@@ -1,23 +1,13 @@
 import React, { Component } from 'react';
-import v4 from 'uuid';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
 import Balance from './Balance/Balance';
 import Controls from './Controls/Controls';
 import styles from './Dashboard.module.css';
 
-const date = new Date();
-
 class Dashboard extends Component {
   state = {
-    balance: 5000,
-    history: [
-      {
-        id: v4(),
-        type: 'deposit',
-        amount: 5000,
-        date: date.toLocaleString(),
-      },
-    ],
+    balance: 0,
+    history: [],
   };
 
   addDepositTransaction = item => {
