@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-03-bank-account/static/css/main.8c007e13.chunk.css",
-    "main.js": "/goit-react-hw-03-bank-account/static/js/main.1fb0cc08.chunk.js",
-    "main.js.map": "/goit-react-hw-03-bank-account/static/js/main.1fb0cc08.chunk.js.map",
-    "runtime~main.js": "/goit-react-hw-03-bank-account/static/js/runtime~main.d734538f.js",
-    "runtime~main.js.map": "/goit-react-hw-03-bank-account/static/js/runtime~main.d734538f.js.map",
-    "static/js/2.c550fe45.chunk.js": "/goit-react-hw-03-bank-account/static/js/2.c550fe45.chunk.js",
-    "static/js/2.c550fe45.chunk.js.map": "/goit-react-hw-03-bank-account/static/js/2.c550fe45.chunk.js.map",
-    "index.html": "/goit-react-hw-03-bank-account/index.html",
-    "precache-manifest.c384cdab467746e46921eed3611ea27b.js": "/goit-react-hw-03-bank-account/precache-manifest.c384cdab467746e46921eed3611ea27b.js",
-    "service-worker.js": "/goit-react-hw-03-bank-account/service-worker.js",
-    "static/css/main.8c007e13.chunk.css.map": "/goit-react-hw-03-bank-account/static/css/main.8c007e13.chunk.css.map"
+    "main.css": "/goit-react-hw-02/static/css/main.aa819be2.chunk.css",
+    "main.js": "/goit-react-hw-02/static/js/main.30ead3a4.chunk.js",
+    "main.js.map": "/goit-react-hw-02/static/js/main.30ead3a4.chunk.js.map",
+    "runtime~main.js": "/goit-react-hw-02/static/js/runtime~main.577bbb3b.js",
+    "runtime~main.js.map": "/goit-react-hw-02/static/js/runtime~main.577bbb3b.js.map",
+    "static/js/2.d1f1f614.chunk.js": "/goit-react-hw-02/static/js/2.d1f1f614.chunk.js",
+    "static/js/2.d1f1f614.chunk.js.map": "/goit-react-hw-02/static/js/2.d1f1f614.chunk.js.map",
+    "index.html": "/goit-react-hw-02/index.html",
+    "precache-manifest.f5140cb40874467ad84c3ed8a2610757.js": "/goit-react-hw-02/precache-manifest.f5140cb40874467ad84c3ed8a2610757.js",
+    "service-worker.js": "/goit-react-hw-02/service-worker.js",
+    "static/css/main.aa819be2.chunk.css.map": "/goit-react-hw-02/static/css/main.aa819be2.chunk.css.map"
   }
 }
